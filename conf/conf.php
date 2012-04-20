@@ -1,4 +1,5 @@
 <?php
-$feed_url = 'http://campino2k.de/feed';
-$wordpress_directory = '';
+// Path to wordpress, relative to installed mobile version
+// _without_ trailing slash
+$wordpress_directory = '../dev/wp';
 ?>

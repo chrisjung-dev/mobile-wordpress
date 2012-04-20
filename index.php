@@ -1,37 +1,36 @@
 <?php
 require_once( 'conf/conf.php' );
-require_once( 'simplepie/simplepie.inc' );
-
-
-
-$feed = 	new SimplePie();
-
-// Set which feed to process
-$feed ->	set_feed_url( $feed_url );
-
-$feed ->	set_cache_location($_SERVER['DOCUMENT_ROOT'] . '/m.campino2k.de/cache');
-
-// Feed abholen
-$feed ->	init();
-
-$feed ->	handle_content_type();
+define( 'WP_USE_THEMES', false );
+require( $wordpress_directory . '/wp-blog-header.php' );
 
 ?>
 
 <?php include( 'inc/header.php' ); ?>
 			
 			<ul data-role="listview" data-theme="c">
-			<?php foreach ($feed->get_items() as $item): ?>
 		 
-				<li>
-					<a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a>
-					<!--
-					<p><?php echo $item->get_description(); ?></p>
-					<p><small>Posted on <?php echo $item->get_date('j F Y | g:i a'); ?></small></p>
-					-->
-				</li>
-		 
-			<?php endforeach; ?>			
+			<?php
+			GLOBAL $wp_query;
+			if (have_posts()) :
+				while (have_posts()) : the_post(); ?>
+
+			<li>
+				<?php $post -> the_date(); echo "<br />"; ?>
+				<?php the_title(); ?>    
+				<?php the_excerpt(); ?> 
+			</li>
+
+			<?php 
+				endwhile; 
+			else:
+			?>
+
+			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			
+			<?php 
+			endif; 
+			?>
+			
 			<ul>
  
 <?php include( 'inc/footer.php' ); ?>

@@ -12,7 +12,7 @@
 		<div data-role="page">
 
 			<div data-role="header">
-				<h1><?php echo $feed->get_title(); ?></h1>
+				<h1>campino2k.de, mobile (hc)</h1>
 			</div><!-- /header -->
 			
 			<div data-role="content">	
