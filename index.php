@@ -10,14 +10,13 @@ require( $wordpress_directory . '/wp-blog-header.php' );
 			<ul data-role="listview" data-theme="c">
 		 
 			<?php
-			GLOBAL $wp_query;
+			query_posts('posts_per_page=20&post_status=publish');
 			if (have_posts()) :
 				while (have_posts()) : the_post(); ?>
 
 			<li>
-				<?php $post -> the_date(); echo "<br />"; ?>
-				<?php the_title(); ?>    
-				<?php the_excerpt(); ?> 
+				<a href="#"><?php the_title(); ?></a>
+				<span class="ui-li-count"><?php comments_number( '0', '1', '%' ); ?></span>
 			</li>
 
 			<?php 
