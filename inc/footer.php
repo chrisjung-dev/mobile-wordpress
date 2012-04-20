@@ -3,9 +3,9 @@
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#" data-icon="info">Info</a></li>
-						<li><a href="#" data-icon="grid">Kategorien</a></li>
-						<li><a href="#" data-icon="gear">Full Site</a></li>
+						<li><a href="#" data-icon="info"><?php echo $lng[ 'btn_info' ];?></a></li>
+						<li><a href="#" data-icon="grid"><?php echo $lng[ 'btn_categories' ];?></a></li>
+						<li><a href="#" data-icon="gear"><?php echo $lng[ 'btn_desktop' ];?></a></li>
 					</ul>
 				</div><!-- /navbar -->
 

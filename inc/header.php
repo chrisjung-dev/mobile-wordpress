@@ -4,6 +4,8 @@
  * Local config
  */
 require_once( 'conf/conf.php' );
+require_once( 'conf/lang.php' );
+require_once( 'conf/about.php' );
 
 /*
  * Load WordPress
@@ -39,7 +41,7 @@ require( $wordpress_directory . '/wp-load.php' );
 	</head>
 
 	<body>
-		<div data-role="page" data-add-back-btn="true" data-back-btn-text="zurück">
+		<div data-role="page" data-add-back-btn="true" data-back-btn-text="<?php echo $lng[ 'back' ]; ?>">
 
 			<div data-role="header">
 				<h1>
