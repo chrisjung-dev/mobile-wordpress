@@ -14,7 +14,7 @@ if( isset( $_GET[ 'cat' ] ) ) {
 			if (have_posts()) :
 			?>
 			<ul data-role="listview" data-theme="c">
-			<?php
+				<?php
 				while (have_posts()) : the_post(); ?>
 
 				<li>
@@ -22,9 +22,9 @@ if( isset( $_GET[ 'cat' ] ) ) {
 					<span class="ui-li-count"><?php comments_number( '0', '1', '%' ); ?></span>
 				</li>
 
-			<?php 
+				<?php 
 				endwhile; 
-			?>
+				?>
 			</ul>
 			<?php
 			else:
@@ -37,9 +37,9 @@ if( isset( $_GET[ 'cat' ] ) ) {
 			wp_reset_query();
 
 		else :
-		?>
-			List categories
-		<?php
+		
+			wp_list_categories( 'title_li=' );
+
 		endif;
 		?>
 
