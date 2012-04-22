@@ -38,7 +38,21 @@ if( isset( $_GET[ 'cat' ] ) ) {
 
 		else :
 		
-			wp_list_categories( 'title_li=' );
+			//wp_list_categories( 'title_li=' );
+			$categories = get_categories();
+			
+			?>
+			<ul data-role="listview"  data-inset="true" data-theme="c">
+			<?php
+			
+			foreach($categories as $category) { 
+				echo '<li><a href="categories.php?cat=' . $category->term_id . '">' . $category->name.'</a></li>';
+			};
+			
+			?>
+			</ul>
+			<?php
+			
 
 		endif;
 		?>

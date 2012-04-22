@@ -3,6 +3,7 @@
 			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 				<div data-role="navbar">
 					<ul>
+						<li><a href="index.php" data-icon="home"><?php echo $lng[ 'btn_home' ];?></a></li>
 						<li><a href="#" data-icon="info"><?php echo $lng[ 'btn_info' ];?></a></li>
 						<li><a href="categories.php" data-icon="grid"><?php echo $lng[ 'btn_categories' ];?></a></li>
 						<li><a href="#" data-icon="gear"><?php echo $lng[ 'btn_desktop' ];?></a></li>
